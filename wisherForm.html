@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Wisher Form</title>
+		<link href="images/gift1.png" rel="icon">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="wish.js"></script>
+		<script type='text/javascript'>
+			function preview_image(event) 
+			{
+			 var reader = new FileReader();
+			 reader.onload = function()
+			 {
+			  var output = document.getElementById('output_image');
+			  output.src = reader.result;
+			 }
+			 reader.readAsDataURL(event.target.files[0]);
+			}
+		</script>
+	<style>
+		.container-fluid{
+			background-color: #5b78c7;
+			
+		}	
+		.submit{
+			border: 0px;
+			border-radius: 10px;
+			background-color: transparent;
+			margin-bottom: 15px;
+		}
+	
+	
+	@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+		html, body {
+		  color: white;
+		  background-color: black;
+		}
+		body {
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column;
+		}
+		#confetti{
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  height: 100%;
+		  width: 100%;
+		}
+		
+		#output_image
+			{
+			 width:100%;
+			}
+		
+	</style>
+</head>
+<body>
+	<canvas id="confetti"></canvas>
+	<div class="container text-center">
+		<div class="row text-white" id="" style="margin-top: 10%; margin-bottom: 10%;">
+			<div class="col-lg-4 offset-lg-4 col-sm-4 offset-md-4" style="background: rgba(54,71,77,.4); border-radius: 15px;">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 col-sm-12 mx-auto text-center form p-4">
+				<h3 class=" " style="font-family: Segoe Script;">Write a wish for</br> Name</h3>	
+				<div class="px-2">
+					<form class=" justify-content-center">
+						<div class="form-group">
+							<input type="text" style="background-color:transparent; color: white;" class="form-control" id="usr" placeholder="Your Name" name="uname" required>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="comment" style="background-color:transparent; color: white;" placeholder="Write your Wishes Here...."></textarea>
+						</div>
+						<div class="form-group">
+							<div id="wrapper" style="margin-top: -10px;">
+								<img id="output_image"/>
+								<input type="file" accept="image/*" onchange="preview_image(event)" style="width: 100%">
+									
+							</div>
+						</div>
+						<div class="form-group">
+							<button class="submit">
+								<img src="images/gift1.png" height="65px;">
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
